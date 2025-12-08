@@ -12,15 +12,16 @@ import Publications from './components/sections/Publications';
 import Footer from './components/sections/Footer';
 import AboutModal from './components/sections/AboutModal';
 import HUD from './components/sections/HUD';
+import type { Project } from './types';
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showAbout, setShowAbout] = useState(false);
-  const mapContainerRef = useRef(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
 
   const { isMapLoaded, mapStats } = useLeafletMap(mapContainerRef, showAbout, selectedProject);
 
-  const handleProjectClick = (project) => {
+  const handleProjectClick = (project: Project) => {
     if (project.details) {
       setSelectedProject(project);
       window.scrollTo({ top: 0, behavior: 'smooth' });
