@@ -1,14 +1,7 @@
 
 import { Calendar } from 'lucide-react';
 import { Badge } from '../ui/badge';
-
-interface Activity {
-  title: string;
-  role: string;
-  date: string;
-  location: string;
-  desc: string;
-}
+import type { Activity } from '../../types';
 
 interface ActivitiesProps {
   activities: Activity[];

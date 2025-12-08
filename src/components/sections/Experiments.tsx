@@ -1,12 +1,7 @@
 
 import { Code } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
-
-interface Experiment {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-}
+import type { Experiment } from '../../types';
 
 interface ExperimentsProps {
   experiments: Experiment[];

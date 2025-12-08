@@ -3,9 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 // Make L available in the global scope
 declare const L: any;
 
-export function useLeafletMap(mapContainerRef: React.RefObject<HTMLDivElement>, showAbout: boolean, selectedProject: any) {
+import type { Project } from '../types';
+
+export function useLeafletMap(mapContainerRef: React.RefObject<HTMLDivElement | null>, showAbout: boolean, selectedProject: Project | null) {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
-  const mapInstanceRef = useRef(null);
+  const mapInstanceRef = useRef<any>(null);
   const [mapStats, setMapStats] = useState({ lat: 0, lng: 0, zoom: 13 });
 
   useEffect(() => {

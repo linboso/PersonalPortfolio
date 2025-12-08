@@ -3,10 +3,11 @@ import { ArrowUpRight, ImageIcon, Layers, PlayCircle } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
+import type { Project } from '../../types';
 
 interface ProjectListProps {
-  projects: any[];
-  onProjectClick: (project: any) => void;
+  projects: Project[];
+  onProjectClick: (project: Project) => void;
 }
 
 export default function ProjectList({ projects, onProjectClick }: ProjectListProps) {
@@ -83,7 +84,7 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
 
             <CardFooter className="flex-col items-start gap-4">
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((t, i) => (
+                {project.tech.map((t: string, i: number) => (
                   <Badge key={i} variant="outline" className="font-mono text-xs border-purple-500/30">
                     {t}
                   </Badge>

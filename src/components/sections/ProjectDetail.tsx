@@ -3,9 +3,10 @@ import { ArrowLeft, ArrowUpRight, Code, Terminal } from 'lucide-react';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import type { Project } from '../../types';
 
 interface ProjectDetailProps {
-    project: any;
+    project: Project;
     onBack: () => void;
 }
 
@@ -30,7 +31,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
           </div>
           <CardTitle className="text-4xl md:text-5xl mb-2">{project.title}</CardTitle>
           <p className="text-xl text-purple-200 font-light border-l-4 border-green-500 pl-4 italic">
-            "{project.details.tagline}"
+            "{project.details?.tagline}"
           </p>
         </CardHeader>
 
@@ -63,7 +64,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
             <div>
               <span className="text-neutral-500 uppercase text-xs block mb-1">Tech Stack</span>
               <div className="flex flex-wrap gap-1">
-                {project.tech.map((t: any) => (
+                {project.tech.map((t: string) => (
                   <span key={t} className="text-green-400 font-mono">
                     {t}
                   </span>
@@ -77,7 +78,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
               <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
                 <Terminal size={18} className="text-purple-500" /> The Challenge
               </h3>
-              <p>{project.details.problem}</p>
+              <p>{project.details?.problem}</p>
             </section>
 
             <section>
@@ -85,7 +86,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
                 <Code size={18} className="text-purple-500" /> Methodology
               </h3>
               <div className="grid gap-4">
-                {project.details.approach.map((step: any, i: number) => (
+                {project.details?.approach.map((step, i) => (
                   <Card
                     key={i}
                     className="bg-black/40 border-l-2 border-l-purple-600 border-t-0 border-r-0 border-b-0 rounded-none hover:border-l-green-500 transition-colors"
@@ -105,7 +106,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
               <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
                 <ArrowUpRight size={18} className="text-purple-500" /> Key Outcomes
               </h3>
-              <p>{project.details.outcome}</p>
+              <p>{project.details?.outcome}</p>
             </section>
           </div>
         </CardContent>

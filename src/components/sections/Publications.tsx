@@ -1,12 +1,6 @@
 
 import { BookOpen } from 'lucide-react';
-
-interface Publication {
-  title: string;
-  journal: string;
-  description: string;
-  location: string;
-}
+import type { Publication } from '../../types';
 
 interface PublicationsProps {
   publications: Publication[];
