@@ -12,7 +12,7 @@ export default defineConfig({
   //     },
   //   }),
   // ],
-  base: '/portfolio',
+  base: '/PersonalPortfolio/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
