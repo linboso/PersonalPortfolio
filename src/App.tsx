@@ -66,7 +66,7 @@ function App() {
             <>
               <Statement />
               <ProjectList projects={projects} onProjectClick={handleProjectClick} />
-              <Experiments experiments={experiments} />
+              {/* <Experiments experiments={experiments} /> */}
               <Activities activities={activities} />
               <Publications publications={publications} />
               <Footer />

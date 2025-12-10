@@ -4,16 +4,16 @@ import React from 'react';
 
 export const projects = [
     {
-      id: "urban-flux",
-      title: "Urban Flux",
-      category: "Geospatial Analysis",
+      id: "stdb",
+      title: "Spatio-Temporal Database(STDB)",
+      category: "Database",
       description: "利用 GIS 結合 Uber Movement 數據，視覺化城市通勤的「隱形邊界」，探討交通可及性與房價的關聯。",
-      tech: ["QGIS", "Mapbox GL", "Python", "React"],
-      year: "2024",
+      tech: ["Docker", "Kubernetes","Helm", "Python", "React", "Deck.gl"],
+      year: "2024-Present",
       status: "Research",
       media: {
         type: 'youtube',
-        src: "https://www.youtube.com/embed/S2q860Tf9j8?si=DemoVideoID" 
+        src: "https://drive.google.com/file/d/1q5t6iSHVwKHO4SWdTFPeK9cLZkgTT311/view?usp=sharing"
       },
       details: {
         tagline: "Decoding the Invisible Mobility Patterns of Taipei City",
@@ -28,9 +28,9 @@ export const projects = [
       }
     },
     {
-      id: "neural-topography",
-      title: "Neural Topography",
-      category: "Generative Map Art",
+      id: "city-ai",
+      title: "CityAI",
+      category: "GenerativeAI",
       description: "訓練 StyleGAN 模型學習古地圖紋理，並生成不存在的虛構地形，探索機器對地理空間的想像。",
       tech: ["PyTorch", "GDAL", "Leaflet", "RunwayML"],
       year: "2023",
@@ -60,39 +60,33 @@ export const projects = [
   
   export const activities = [
     {
-      title: "g0v Summit 2024",
-      role: "Speaker",
-      date: "May 2024",
-      location: "Taipei",
-      desc: "Presented 'Open Map Data for Disaster Relief' to 200+ attendees."
+      title: "BioBio MIT Media Lab Summit 2025",
+      role: "Exhibitor",
+      date: "Oct 2025",
+      location: "Concepcion ,Chile",
+      desc: "Presented 'CityAI' to 200+ attendees."
     },
     {
-      title: "NASA Space Apps Challenge",
-      role: "First Prize Winner",
-      date: "Oct 2023",
-      location: "Global / Virtual",
+      title: "Microsoft DevDays 2025",
+      role: "Speaker",
+      date: "Sep 2025",
+      location: "Taipei, Taiwan",
       desc: "Developed a flood prediction model using satellite imagery."
     },
     {
-      title: "OpenStreetMap Taiwan Meetup",
-      role: "Organizer",
-      date: "2022 - Present",
-      location: "Taipei",
+      title: "Nation Science and Technology Council",
+      role: "Exhibitor",
+      date: "Oct 2024",
+      location: "Taipei, Taiwan",
       desc: "Monthly mapping parties and technical workshops."
     }
   ];
 
   export const publications = [
     {
-      title: "FOSS4G 2024",
-      journal: "Optimizing Vector Tiles for Real-time Data Viz",
-      description: "Speaker",
-      location: "Seoul, Korea"
+      title: "1st ACM GeoGenAgent '25 International Workshop",
+      journal: "Democratizing Multi-Granularity Spatio-Temporal Intelligence with Multi-Agent Systems",
+      description: "Author",
+      location: "USA"
     },
-    {
-      title: "IEEE Vis '23",
-      journal: "Visualizing Urban Noise Pollution",
-      description: "Primary Researcher",
-      location: "Melbourne, Australia"
-    }
   ];

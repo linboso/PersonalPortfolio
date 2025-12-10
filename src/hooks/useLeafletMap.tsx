@@ -33,12 +33,12 @@ export function useLeafletMap(mapContainerRef: React.RefObject<HTMLDivElement>, 
   useEffect(() => {
     if (!isMapLoaded || !mapContainerRef.current) return;
     if (mapInstanceRef.current) {
-        // Update map opacity without re-initializing
-        const newOpacity = selectedProject || showAbout ? 0.3 : 0.85;
-        if (mapContainerRef.current) {
-            mapContainerRef.current.style.opacity = newOpacity.toString();
-        }
-        return;
+      // Update map opacity without re-initializing
+      const newOpacity = selectedProject || showAbout ? 0.3 : 0.85;
+      if (mapContainerRef.current) {
+          mapContainerRef.current.style.opacity = newOpacity.toString();
+      }
+      return;
     };
 
 

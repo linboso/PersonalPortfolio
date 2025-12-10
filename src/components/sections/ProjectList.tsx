@@ -21,7 +21,7 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
         {projects.map((project, idx) => (
           <Card
             key={idx}
-            className="group relative border-purple-900/30 hover:border-green-500/50 transition-all duration-300 overflow-hidden"
+            className="group relative border-purple-900/30 hover:border-green-500/50 transition-all duration-300 overflow-hidden p-8"
           >
             <div className="absolute top-0 right-0 w-8 h-8 bg-purple-900/10 group-hover:bg-green-500/20 transition-colors -skew-x-12 translate-x-4 -translate-y-4"></div>
 
@@ -75,13 +75,12 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
                   ) : null}
                 </div>
               )}
-
               <CardDescription className="text-neutral-400 leading-relaxed text-base">
                 {project.description}
               </CardDescription>
             </CardContent>
 
-            <CardFooter className="flex-col items-start gap-4">
+            <CardFooter className="flex-col items-start gap-2 mt-10">
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t, i) => (
                   <Badge key={i} variant="outline" className="font-mono text-xs border-purple-500/30">
@@ -90,7 +89,7 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
                 ))}
               </div>
 
-              <div className="pt-4 w-full">
+              <div className="pt-0 w-full">
                 {project.details ? (
                   <Button
                     variant="ghost"

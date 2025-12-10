@@ -29,6 +29,7 @@ export default function Activities({ activities }: ActivitiesProps) {
               <h4 className="text-white font-bold group-hover:text-green-300 transition-colors">{act.title}</h4>
               <span className="text-xs text-orange-500 font-mono">{act.date}</span>
             </div>
+
             <div className="flex items-center gap-2 text-xs text-purple-300 mb-2">
               <Badge variant="secondary" className="px-1.5 py-0.5 rounded border-purple-900/50">
                 {act.role}
@@ -36,7 +37,7 @@ export default function Activities({ activities }: ActivitiesProps) {
               <span>•</span>
               <span>{act.location}</span>
             </div>
-            <p className="text-sm text-neutral-400 leading-relaxed">{act.desc}</p>
+            {/* <p className="text-sm text-neutral-400 leading-relaxed">{act.desc}</p> */}
           </div>
         ))}
       </div>

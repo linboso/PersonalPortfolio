@@ -25,7 +25,7 @@ export default function AboutModal({ showAbout, onClose }: AboutModalProps) {
           <div className="w-32 h-32 bg-neutral-800 border-2 border-green-400 rounded-sm mb-4 flex items-center justify-center overflow-hidden grayscale contrast-125">
             <User size={48} className="text-neutral-600" />
           </div>
-          <h3 className="text-white font-bold text-lg text-center">YOUR NAME</h3>
+          <h3 className="text-white font-bold text-lg text-center">Po-Han Lin</h3>
           <Badge variant="secondary" className="mt-2 font-mono">
             ACCESS GRANTED
           </Badge>
@@ -72,6 +72,7 @@ export default function AboutModal({ showAbout, onClose }: AboutModalProps) {
             <div className="pt-4">
               <Button variant="eva" className="w-full md:w-auto gap-2">
                 <FileText size={16} /> DOWNLOAD C.V.
+                {/* <a>https://drive.google.com/file/d/1gJN2Kr5inrGR2CM_PDbXb-fz1oRiUmNr/view?usp=sharing</a> */}
               </Button>
               <p className="text-[10px] text-neutral-500 mt-2 text-center md:text-left">
                 * PDF Format. Last Updated: DEC 2025
