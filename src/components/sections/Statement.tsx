@@ -7,7 +7,7 @@ export default function Statement() {
     <section className="space-y-6">
       <div className="flex items-center gap-2 text-purple-400 mb-4 border-b border-purple-900/50 pb-2">
         <Terminal size={16} />
-        <span className="text-sm tracking-widest uppercase font-bold">Statement</span>
+        <span className="text-sm tracking-widest uppercase font-bold">About Me</span>
       </div>
       <Card className="bg-transparent border-0 shadow-none backdrop-blur-none">
         <CardContent className="p-0">

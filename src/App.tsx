@@ -16,6 +16,7 @@ import HUD from './components/sections/HUD';
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAbout, setShowAbout] = useState(false);
+  const [activeSection, setActiveSection] = useState('About Me');
   const mapContainerRef = useRef(null);
 
   const { isMapLoaded, mapStats } = useLeafletMap(mapContainerRef, showAbout, selectedProject);
@@ -30,6 +31,11 @@ function App() {
   const handleBackClick = () => {
     setSelectedProject(null);
   };
+
+  const handleNavClick = (section: string) => {
+    setActiveSection(section);
+    setSelectedProject(null); // Deselect project when changing sections
+  }
 
   return (
     <div className="min-h-screen bg-[#05040a] text-neutral-200 font-mono selection:bg-purple-600 selection:text-green-300 relative">
@@ -57,18 +63,31 @@ function App() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        <Header onShowAbout={() => setShowAbout(true)} />
+        <Header 
+          onShowAbout={() => setShowAbout(true)}
+          activeSection={activeSection}
+          onNavClick={handleNavClick}
+          selectedProject={selectedProject}
+        />
 
         <div className="lg:col-span-8 space-y-20 min-h-screen">
           {selectedProject ? (
             <ProjectDetail project={selectedProject} onBack={handleBackClick} />
           ) : (
             <>
-              <Statement />
-              <ProjectList projects={projects} onProjectClick={handleProjectClick} />
-              {/* <Experiments experiments={experiments} /> */}
-              <Activities activities={activities} />
-              <Publications publications={publications} />
+              {activeSection === 'About Me' && (
+                <>
+                  <Statement />
+                  <Activities activities={activities} />
+                  <Publications publications={publications} />
+                <Activities activities={activities} />
+                </>
+              )}
+              {activeSection === 'Projects' && (
+                <ProjectList projects={projects} onProjectClick={handleProjectClick} />
+              )}
+              {/* {activeSection === 'Activities' && (
+              )} */}
               <Footer />
             </>
           )}

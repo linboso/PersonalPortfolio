@@ -1,17 +1,17 @@
 import { Github, Mail, User } from 'lucide-react';
 import { Button } from '../ui/button';
-import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 
 
 interface HeaderProps {
   onShowAbout: () => void;
+  activeSection: string;
+  onNavClick: (section: string) => void;
+  selectedProject: any;
 }
 
-function Header({ onShowAbout }: HeaderProps) {
-  const [activeSection, setActiveSection] = useState('About Me');
-  const [selectedProject, setSelectedProject] = useState(null);
+function Header({ onShowAbout, activeSection, onNavClick, selectedProject }: HeaderProps) {
 
   return (
     <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit space-y-8 hidden lg:block">
@@ -46,14 +46,11 @@ function Header({ onShowAbout }: HeaderProps) {
       </header>
 
       <nav className="flex flex-col space-y-2">
-        {['About Me', 'Projects', 'Activities'].map((item) => (
+        {['About Me', 'Projects'].map((item) => (
           <Button 
             key={item}
             variant="ghost"
-            onClick={() => {
-                setActiveSection(item);
-                setSelectedProject(null);
-            }}
+            onClick={() => onNavClick(item)}
             className={cn(
               "justify-start w-full font-bold tracking-widest uppercase border-l-2 rounded-none px-4",
               activeSection === item && !selectedProject
