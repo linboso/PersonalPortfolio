@@ -1,11 +1,18 @@
 import { Github, Mail, User } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+
+
 
 interface HeaderProps {
   onShowAbout: () => void;
 }
 
 function Header({ onShowAbout }: HeaderProps) {
+  const [activeSection, setActiveSection] = useState('About Me');
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit space-y-8 hidden lg:block">
       <header className="space-y-4">
@@ -37,6 +44,27 @@ function Header({ onShowAbout }: HeaderProps) {
           </Button>
         </div>
       </header>
+
+      <nav className="flex flex-col space-y-2">
+        {['About Me', 'Projects', 'Activities'].map((item) => (
+          <Button 
+            key={item}
+            variant="ghost"
+            onClick={() => {
+                setActiveSection(item);
+                setSelectedProject(null);
+            }}
+            className={cn(
+              "justify-start w-full font-bold tracking-widest uppercase border-l-2 rounded-none px-4",
+              activeSection === item && !selectedProject
+                ? 'border-green-400 text-green-400 bg-purple-900/20'
+                : 'border-transparent text-neutral-400 hover:border-green-400/50'
+            )}
+          >
+            {item}
+          </Button>
+        ))}
+      </nav>
 
       {/* <div className="text-xs text-neutral-600 pt-12 border-t border-purple-900/30 mt-8">
         <p className="flex items-center gap-1">
