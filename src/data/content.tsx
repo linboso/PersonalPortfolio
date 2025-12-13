@@ -93,7 +93,7 @@ export const projects = [
       year: "2023",
       status: "Published",
       media: {
-        type: 'gif',
+        type: 'image',
         src: "https://images.squarespace-cdn.com/content/v1/6233bcb85cbc9844aba9dd8b/7ae2036a-a96d-4099-b358-4c6bd9f1b348/DSC04833_V.jpg?format=2500w"
       },
       href: "https://www.csltaipeitech.com/en/project/city-design-power-index"
