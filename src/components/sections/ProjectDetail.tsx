@@ -72,7 +72,7 @@ export default function ProjectDetail({ project, onBack }: ProjectDetailProps) {
             </div>
           </div>
 
-          <div className="space-y-8 text-neutral-300 leading-relaxed">
+          <div className="space-y-8 text-neutral-300 leading-relaxed p-4">
             <section>
               <h3 className="text-white font-bold text-lg mb-3 flex items-center gap-2">
                 <Terminal size={18} className="text-purple-500" /> The Challenge

@@ -1,4 +1,4 @@
-import { Github, Mail, User } from 'lucide-react';
+import { Download, DownloadCloudIcon, File, Github, Linkedin, Mail, User } from 'lucide-react';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 
@@ -20,20 +20,41 @@ function Header({ onShowAbout, activeSection, onNavClick, selectedProject }: Hea
           Po-Han Lin
           <span className="text-green-400">.</span>
         </h1>
+
+        <div className="size-60 mx-auto bg-neutral-800 border-2 border-green-400 rounded-xl mb-4 flex items-center justify-center overflow-hidden contrast-125">
+          <img src='profile_pic.webp' className="w-full h-full object-cover" alt="Po-Han Lin" />
+        </div>
+
+
         <p className="text-lg text-purple-300">
-          Researcher & <br />
-          Software Engineer
+          Geek & AI Research & <br />
+          Software Engineer 
         </p>
         <div className="flex gap-4 pt-2">
-          <Button variant="outline" size="icon" className="rounded-full">
-            <Github size={20} />
+          <Button variant="outline" size="icon" className="rounded-full text-green-400 border-green-500/50 hover:bg-green-500 hover:text-black" asChild>
+            <a href="https://github.com/linboso" target="_blank" rel="noopener noreferrer">
+              <Github size={20} />
+            </a>
           </Button>
 
-          <Button variant="outline" size="icon" className="rounded-full">
-            <Mail size={20} />
+          <Button variant="outline" size="icon" className="rounded-full" asChild>
+            <a href='https://www.linkedin.com/in/po-han-lin-82987323a/' target='_blank' rel='noopener noreferrer'>
+              <Linkedin size={20} />
+            </a>
           </Button>
-          
-          <Button
+          <Button variant="outline" size="icon" className="rounded-full" asChild>
+            <a href='mailto:linboso0@gmail.com' target='_blank' rel='noopener noreferrer'>
+              <Mail size={20} />
+            </a>
+          </Button>
+
+          <Button variant="outline" size="icon" className="rounded-full" asChild>
+            <a href="2025_v4.pdf" download="Po-Han_Lin_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Download size={20}/>
+            </a>
+          </Button>
+
+          {/* <Button
             variant="outline"
             size="icon"
             className="rounded-full text-green-400 border-green-500/50 hover:bg-green-500 hover:text-black"
@@ -41,7 +62,7 @@ function Header({ onShowAbout, activeSection, onNavClick, selectedProject }: Hea
             title="View Pilot Profile"
           >
             <User size={20} />
-          </Button>
+          </Button> */}
         </div>
       </header>
 

@@ -59,7 +59,7 @@ function App() {
       
       <HUD mapStats={mapStats} />
 
-      <AboutModal showAbout={showAbout} onClose={() => setShowAbout(false)} />
+      {/* <AboutModal showAbout={showAbout} onClose={() => setShowAbout(false)} /> */}
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
@@ -80,7 +80,6 @@ function App() {
                   <Statement />
                   <Activities activities={activities} />
                   <Publications publications={publications} />
-                <Activities activities={activities} />
                 </>
               )}
               {activeSection === 'Projects' && (
@@ -88,7 +87,8 @@ function App() {
               )}
               {/* {activeSection === 'Activities' && (
               )} */}
-              <Footer />
+
+              {/* <Footer /> */}
             </>
           )}
         </div>

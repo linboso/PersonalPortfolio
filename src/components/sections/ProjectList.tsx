@@ -31,7 +31,8 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
                   {project.category}
                 </Badge>
                 <span className="font-mono text-xs text-purple-300">
-                  {project.year} // <span className="text-orange-400">{project.status}</span>
+                  {project.year} 
+                  {/* <span className="text-orange-400">{project.status}</span> */}
                 </span>
               </div>
               <CardTitle
@@ -62,14 +63,25 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
                       />
                     </div>
                   ) : project.media.type === 'gif' ? (
-                    <div className="w-full relative">
+                    <div className="aspect-video w-full relative">
                       <img
                         src={project.media.src}
                         alt={project.title}
-                        className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                       />
                       <div className="absolute bottom-2 right-2 text-xs text-white bg-black/70 px-2 py-1 flex items-center gap-1 rounded">
                         <ImageIcon size={10} /> GIF PREVIEW
+                      </div>
+                    </div>
+                  ) : project.media.type === "image" ? (
+                    <div className="aspect-video w-full relative">
+                      <img
+                        src={project.media.src}
+                        alt={project.title}
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                      />
+                      <div className="absolute bottom-2 right-2 text-xs text-white bg-black/70 px-2 py-1 flex items-center gap-1 rounded">
+                        <ImageIcon size={10} /> PREVIEW
                       </div>
                     </div>
                   ) : null}
@@ -101,15 +113,18 @@ export default function ProjectList({ projects, onProjectClick }: ProjectListPro
                     </span>
                     <ArrowUpRight size={14} className="opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                   </Button>
-                ) : (
+                ) : project.href ? (
                   <Button
                     variant="ghost"
                     className="w-full justify-between group/btn pl-0 hover:bg-transparent hover:text-green-400"
+                    asChild
                   >
-                    <span className="flex items-center gap-2">View Visualization</span>
-                    <ArrowUpRight size={14} />
+                    <a href={project.href} target="_blank" rel="noopener noreferrer">
+                      <span className="flex items-center gap-2">More</span>
+                      <ArrowUpRight size={14} />
+                    </a>
                   </Button>
-                )}
+                ) : null}
               </div>
             </CardFooter>
           </Card>

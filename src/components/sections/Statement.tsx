@@ -11,14 +11,15 @@ export default function Statement() {
       </div>
       <Card className="bg-transparent border-0 shadow-none backdrop-blur-none">
         <CardContent className="p-0">
-          <p className="text-xl md:text-2xl leading-relaxed text-neutral-300 font-light backdrop-blur-sm">
-            I view the world through layers of <span className="text-white font-medium border-b-2 border-green-500">spatial data</span>.
-            My work explores how Geographic Information Systems (GIS) can transcend pure analysis to become a medium for
-            storytelling and urban empathy.
+          <p className="text-xl md:text-md leading-relaxed text-neutral-300 font-light backdrop-blur-sm">
+            I am from Taiwan with a background in Information and Finance Management. Over the past two years, 
+            I have focused on data-driven approaches to understanding and shaping cities, 
+            combining <span className="text-white font-medium border-b-2 border-green-500">spatial analysis, quantitative modelling, and AI.</span>
           </p>
+                  
           <p className="text-neutral-400 mt-4">
-            Currently focusing on Urban Informatics and Interactive Cartography. Seeking to join the [Specific Group
-            Name] group at MIT Media Lab.
+            My interdisciplinary work connects computational infrastructure with complex urban dynamics to 
+            support government and industry decision-making and innovation.
           </p>
         </CardContent>
       </Card>
