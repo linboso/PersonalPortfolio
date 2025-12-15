@@ -17,7 +17,7 @@ function Header({ onShowAbout, activeSection, onNavClick, selectedProject }: Hea
     <div className="lg:col-span-4 lg:sticky lg:top-24 h-fit space-y-8 hidden lg:block">
       <header className="space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
-          Po-Han Lin
+          Boso Lin
           <span className="text-green-400">.</span>
         </h1>
 
